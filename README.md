@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 -Solution URl:- [https://github.com/vikashyadav22313-cell/news-letter-page.git]
--live site:- [https://newspaper-pages.netlify.app/]
+-live site:- [https://newspaper-pages.netlify.app]
 
 ---
 
