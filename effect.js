@@ -1,9 +1,12 @@
 const input = document.querySelector("input[name=email]");
-const holder = document.querySelector("input[placeholder]");
 const error = document.querySelector(".error");
 const submitBtn = document.querySelector(".send");
-const form = document.querySelector("form");  
-const message= document.querySelector(".message");  
+const dismiss = document.querySelector(".dismiss");
+const main = document.querySelector(".container");
+const form = document.querySelector("form");
+const user = document.querySelector(".user");
+const message = document.querySelector(".message-box");
+
 function resetError() {
   input.style.backgroundColor = "white";
   input.style.border = "1px solid hsl(234, 29%, 20%)";
@@ -25,8 +28,17 @@ submitBtn.addEventListener("click", (e) => {
     showError();
   } else {
     resetError();
-    form.submit();
+    main.classList.add("hidden");
+    message.classList.remove("hidden");
+    user.innerHTML = input.value;
+    user.style.fontWeight = "600";
+    input.value = "";
   }
+});
+
+dismiss.addEventListener("click", () => {
+  main.classList.remove("hidden"); 
+  message.classList.add("hidden"); 
 });
 
 input.addEventListener("input", resetError);
